@@ -46,5 +46,11 @@ class LoginModel extends Conexion
         return $nombre;
     }
 
+    public function mostrarDatos($dni){
+        $sql = $this->conexion->query("SELECT u.username from usuario u where u.dni = '$dni'");
+        $user = $sql->fetch_row()[0];
+        return $user;
+    }
+
 }
 ?>

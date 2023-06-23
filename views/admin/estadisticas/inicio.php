@@ -37,15 +37,15 @@
 
             <div class="border rounded px-4 pt-3 pb-3">
 
-                <p class="fs-6">Solicitudes</p>
+                <p class="fs-6">Equipos</p>
 
                 <div class="row mb-3 justify-content-center">
                     <div class="col-auto">
                         <div class="card border-info mb-3">
-                            <div class="card-header">Mensajes de atención RCP</div>
+                            <div class="card-header">Tareas</div>
                             <a class="text-info" href="index.php?c=MensajesController&a=index">
                                 <div class="card-body">
-                                    <h5 class="card-title fs-2"><?= $cantTotalMsj ?></h5>
+                                    <!-- <h5 class="card-title fs-2"><?= $cantTotalMsj ?></h5> -->
                                     <p class="card-text">En total</p>
                                 </div>
                             </a>
@@ -61,7 +61,7 @@
                             <div class="card-header">En espera de una acción</div>
                             <a class="text-secondary" href="index.php?c=MensajesController&a=getPendientes">
                                 <div class="card-body">
-                                    <h5 class="card-title fs-2"><?= $cantPendientes ?></h5>
+                                    <!-- <h5 class="card-title fs-2"><?= $cantPendientes ?></h5> -->
                                     <p class="card-text">Total</p>
                                 </div>
                             </a>
@@ -71,10 +71,10 @@
 
                     <div class="col-sm-6">
                         <div class="card border-primary mb-3">
-                            <div class="card-header">Llevandose a cabo</div>
+                            <div class="card-header">En progreso</div>
                             <a class="text-primary" href="index.php?c=MensajesController&a=getEnCurso">
                                 <div class="card-body">
-                                    <h5 class="card-title fs-2"><?= $cantEnCurso ?></h5>
+                                    <!-- <h5 class="card-title fs-2"><?= $cantEnCurso ?></h5> -->
                                     <p class="card-text">Total</p>
                                 </div>
                             </a>
@@ -83,10 +83,10 @@
 
                     <div class="col-sm-4">
                         <div class="card border-success mb-3">
-                            <div class="card-header">Concluidos</div>
+                            <div class="card-header">Finaliazdos</div>
                             <a class="text-success" href="index.php?c=MensajesController&a=getConcluidos">
                                 <div class="card-body">
-                                    <h5 class="card-title fs-2"><?= $cantConcluidos ?></h5>
+                                    <!-- <h5 class="card-title fs-2"><?= $cantConcluidos ?></h5> -->
                                     <p class="card-text">Total</p>
                                 </div>
                             </a>
@@ -98,7 +98,7 @@
                             <div class="card-header">Cancelados</div>
                             <a class="text-danger" href="index.php?c=MensajesController&a=getCancelados">
                                 <div class="card-body">
-                                    <h5 class="card-title fs-2"><?= $cantCancelados ?></h5>
+                                    <!-- <h5 class="card-title fs-2"><?= $cantCancelados ?></h5> -->
                                     <p class="card-text">Total</p>
                                 </div>
                             </a>
@@ -110,7 +110,7 @@
                             <div class="card-header">Eliminados</div>
                             <a class="text-warning" href="index.php?c=MensajesController&a=getEliminados">
                                 <div class="card-body">
-                                    <h5 class="card-title fs-2"><?= $cantEliminados ?></h5>
+                                    <!-- <h5 class="card-title fs-2"><?= $cantEliminados ?></h5> -->
                                     <p class="card-text">Total</p>
                                 </div>
                             </a>
@@ -127,7 +127,7 @@
             <div class="border rounded px-4 pt-3 pb-3">
 
                 <p class="fs-6">Distritos de Guaymallén</p>
-
+<!-- 
                 <div class="row mb-3 justify-content-center">
                     <div class="col-lg-6">
                         <div class="card border-info mb-3">
@@ -140,9 +140,87 @@
                             </a>
                         </div>
                     </div>
+                </div> -->
+
+                <div class="row mb-3 justify-content-center">
+                    <div class="col-auto">
+                        <div class="card border-info mb-3">
+                            <div class="card-header">Tareas</div>
+                            <a class="text-info" href="index.php?c=MensajesController&a=index">
+                                <div class="card-body">
+                                    <!-- <h5 class="card-title fs-2"><?= $cantTotalMsj ?></h5> -->
+                                    <p class="card-text">En total</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
+
                 <div class="row justify-content-center">
+
+                    <div class="col-md-6">
+                        <div class="card border-secondary mb-3">
+                            <div class="card-header">En espera de una acción</div>
+                            <a class="text-secondary" href="index.php?c=MensajesController&a=getPendientes">
+                                <div class="card-body">
+                                    <!-- <h5 class="card-title fs-2"><?= $cantPendientes ?></h5> -->
+                                    <p class="card-text">Total</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="card border-primary mb-3">
+                            <div class="card-header">En progreso</div>
+                            <a class="text-primary" href="index.php?c=MensajesController&a=getEnCurso">
+                                <div class="card-body">
+                                    <!-- <h5 class="card-title fs-2"><?= $cantEnCurso ?></h5> -->
+                                    <p class="card-text">Total</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="card border-success mb-3">
+                            <div class="card-header">Finaliazdos</div>
+                            <a class="text-success" href="index.php?c=MensajesController&a=getConcluidos">
+                                <div class="card-body">
+                                    <!-- <h5 class="card-title fs-2"><?= $cantConcluidos ?></h5> -->
+                                    <p class="card-text">Total</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="card border-danger mb-3">
+                            <div class="card-header">Cancelados</div>
+                            <a class="text-danger" href="index.php?c=MensajesController&a=getCancelados">
+                                <div class="card-body">
+                                    <!-- <h5 class="card-title fs-2"><?= $cantCancelados ?></h5> -->
+                                    <p class="card-text">Total</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="card border-warning mb-3">
+                            <div class="card-header">Eliminados</div>
+                            <a class="text-warning" href="index.php?c=MensajesController&a=getEliminados">
+                                <div class="card-body">
+                                    <!-- <h5 class="card-title fs-2"><?= $cantEliminados ?></h5> -->
+                                    <p class="card-text">Total</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row justify-content-center">
 
                     <p class="fs-6 mb-1">Cantidad de solicitudes de atención</p>
 
@@ -170,7 +248,7 @@
                     </div>
 
 
-                </div>
+                </div> -->
 
             </div>
 
@@ -187,7 +265,7 @@
 
             <div class="border rounded px-4 pt-3 pb-3">
 
-                <p class="fs-6">Movilidades</p>
+                <p class="fs-6">Dispositivos</p>
 
                 <div class="row mb-3 justify-content-center">
                     <div class="col-lg-6">
@@ -195,7 +273,7 @@
                             <div class="card-header">Cantidad</div>
                             <a class="text-info" href="index.php?c=MovilidadController&a=index">
                                 <div class="card-body">
-                                    <h5 class="card-title fs-2"><?= $cantMovilidades ?></h5>
+                                    <!-- <h5 class="card-title fs-2"><?= $cantMovilidades ?></h5> -->
                                     <p class="card-text">En total</p>
                                 </div>
                             </a>
@@ -210,7 +288,7 @@
                         <div class="card border-success mb-3">
                             <div class="card-header">Disponible</div>
                             <div class="card-body">
-                                <h4 class="card-title fs-2"><?= $cantMovDisponibles ?></h4>
+                                <!-- <h4 class="card-title fs-2"><?= $cantMovDisponibles ?></h4> -->
                                 <p class="card-text">Unidades en total</p>
                             </div>
                         </div>
@@ -222,7 +300,7 @@
                         <div class="card border-danger mb-3">
                             <div class="card-header">Ocupado</div>
                             <div class="card-body">
-                                <h4 class="card-title fs-2"><?= $cantMovOcupadas ?></h4>
+                                <!-- <h4 class="card-title fs-2"><?= $cantMovOcupadas ?></h4> -->
                                 <p class="card-text">Unidades en total</p>
                             </div>
                         </div>
@@ -238,7 +316,7 @@
                         <div class="card border-secondary mb-3">
                             <div class="card-header">No disponible</div>
                             <div class="card-body">
-                                <h4 class="card-title fs-2"><?= $cantMovNoDisponibles ?></h4>
+                                <!-- <h4 class="card-title fs-2"><?= $cantMovNoDisponibles ?></h4> -->
                                 <p class="card-text">Unidades en total</p>
                             </div>
                         </div>
@@ -250,7 +328,7 @@
                         <div class="card border-warning mb-3">
                             <div class="card-header">Baja</div>
                             <div class="card-body">
-                                <h4 class="card-title fs-2"><?= $cantMovBajas ?></h4>
+                                <!-- <h4 class="card-title fs-2"><?= $cantMovBajas ?></h4> -->
                                 <p class="card-text">Unidades en total</p>
                             </div>
                         </div>
@@ -277,7 +355,7 @@
                             <div class="card-header">Cantidad</div>
                             <a class="text-info" href="index.php?c=UsuariosController&a=index">
                                 <div class="card-body">
-                                    <h5 class="card-title fs-2"><?= $cantUsuarios ?></h5>
+                                    <!-- <h5 class="card-title fs-2"><?= $cantUsuarios ?></h5> -->
                                     <p class="card-text">En total</p>
                                 </div>
                             </a>
@@ -292,7 +370,7 @@
                         <div class="card border-info mb-3">
                             <div class="card-header">Administradores</div>
                             <div class="card-body">
-                                <h4 class="card-title fs-2"><?= $cantAdmins ?></h4>
+                                <!-- <h4 class="card-title fs-2"><?= $cantAdmins ?></h4> -->
                                 <p class="card-text">Total</p>
                             </div>
                         </div>
@@ -304,7 +382,7 @@
                         <div class="card border-info mb-3">
                             <div class="card-header">Supervisores</div>
                             <div class="card-body">
-                                <h4 class="card-title fs-2"><?= $cantSupervisores ?></h4>
+                                <!-- <h4 class="card-title fs-2"><?= $cantSupervisores ?></h4> -->
                                 <p class="card-text">Total</p>
                             </div>
                         </div>
@@ -316,7 +394,7 @@
                         <div class="card border-info mb-3">
                             <div class="card-header">Agentes</div>
                             <div class="card-body">
-                                <h4 class="card-title fs-2"><?= $cantAgentes ?></h4>
+                                <!-- <h4 class="card-title fs-2"><?= $cantAgentes ?></h4> -->
                                 <p class="card-text">Total</p>
                             </div>
                         </div>
@@ -332,7 +410,7 @@
                                 Bajas
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title"><?= $cantUsuariosBaja ?></h4>
+                                <!-- <h4 class="card-title"><?= $cantUsuariosBaja ?></h4> -->
                                 <p class="card-text">Total</p>
                             </div>
                         </div>

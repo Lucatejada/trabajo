@@ -45,6 +45,7 @@ class LoginController
                     session_start();
                     $_SESSION['dni'] = $dni;
                     $_SESSION['nombre'] = $model->mostrarNombreApellido($dni);
+                    $_SESSION['user'] = $model->mostrarDatos($dni);
                     $_SESSION['rol'] = $tipoUsuario;
                     // $model->verificarUltimoAcceso($dni); 
                     header('Location: views/admin/index.php?c=EstadisticasController&a=index');
