@@ -10,7 +10,7 @@ error_reporting(E_ALL ^ E_WARNING);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de control</title>
-    <link rel="shortcut icon" href="../views/assets/logoWeb.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     
@@ -43,10 +43,11 @@ error_reporting(E_ALL ^ E_WARNING);
         <div class="row justify-content-center align-items-center">
             <div class="col-lg-3">
 
-                <form action="index.php?c=LoginController&a=login" method="post" class="border px-5 pb-5" style="background-color: white; border-radius: 4%;">
+                <form action="index.php?c=LoginController&a=login" method="post" class="border px-5 pb-5 pt-3" style="background-color: #e9ecef; border-radius: 4%;">
                     <div class="row text-center">
                         <!-- <p class="fs-4 pt-3">Acceder</p> -->
-                        <i class="bi bi-person-circle" style="font-size: 90px;"></i>
+                        <!-- <i class="bi bi-person-circle" style="font-size: 90px;"></i> -->
+                        <i class="bi bi-person-vcard" style="font-size: 90px;"></i>
                     </div>
                     <div class="row mb-4">
                         <input type="text" class="form-control" name="username" aria-describedby="helpId" placeholder="Usuario">
