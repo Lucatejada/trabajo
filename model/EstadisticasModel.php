@@ -74,6 +74,38 @@ class EstadisticasModel extends Conexion
         $cantPersonas = $result->fetch_row()[0];
         return $cantPersonas;
     }
+    public function contarAdminsM()
+    {
+        $sql = "SELECT count(*) from usuario WHERE id_rol2 = 3";
+        $result = $this->conexion->query($sql);
+        $cantAdmins = $result->fetch_row()[0];
+        return $cantAdmins;
+    }
+    public function contarEncargadoM()
+    {
+        $sql = "SELECT count(*) from usuario WHERE id_rol2 = 2";
+        $result = $this->conexion->query($sql);
+        $cantEncargados = $result->fetch_row()[0];
+        return $cantEncargados;
+    }
+
+    public function contarTecnicosM(){
+        $sql = "SELECT count(*) from usuario ";
+        $result = $this->conexion->query($sql);
+        $cantTecnicos = $result->fetch_row()[0];
+        return $cantTecnicos;
+    }
+   
+    public function contarClientesM(){
+        $sql = "SELECT count(*) from distritos";
+        $result = $this->conexion->query($sql);
+        $cantClientes = $result->fetch_row()[0];
+        return $cantClientes;
+    }
+   
+
+
+
 
     // public function contarPersonasMascM()
     // {

@@ -32,9 +32,6 @@ if (isset($_SESSION['dni'])) {
 
         <body data-bs-theme="dark">
 
-
-
-
             <div class="container-fluid sticky-top pb-4">
 
                 <nav class="navbar navbar-expand-lg bg-dark justify-content-flex-start">
@@ -46,18 +43,6 @@ if (isset($_SESSION['dni'])) {
                         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
 
                             <ul class="navbar-nav">
-                                <!-- <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    
-                                        <i class="bi bi-brightness-low"></i>
-                                        Tema
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </li> -->
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="bi bi-person-lines-fill"></i> <?= $_SESSION['nombre'] ?>
