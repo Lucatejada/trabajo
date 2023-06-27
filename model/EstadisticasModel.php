@@ -18,9 +18,9 @@ class EstadisticasModel extends Conexion
     }
 
     //INICIO
-    public function contarTotalMsjM()
+    public function contarTotalEstadosM()
     {
-        $sql = "SELECT COUNT(*) FROM mensaje";
+        $sql = "SELECT COUNT(*) FROM estado_msj;";
         $result = $this->conexion->query($sql);
         $cantMsj = $result->fetch_row()[0];
         return $cantMsj;
@@ -103,6 +103,21 @@ class EstadisticasModel extends Conexion
         return $cantClientes;
     }
    
+
+    //Estados
+    public function contarEstadosM(){
+        $sql = "SELECT count(*) from estado_msj";
+        $result = $this->conexion->query($sql);
+        $cantEstados = $result->fetch_row()[0];
+        return $cantEstados;
+    }
+    public function listarEstadosM(){
+        $sql = "SELECT * from estado_msj";
+        $result = $this->conexion->query($sql);
+        $cantClientes = $result->fetch_row()[0];
+        return $cantClientes;
+    }
+
 
 
 

@@ -127,7 +127,7 @@
             <div class="border rounded px-4 pt-3 pb-3">
 
                 <p class="fs-6">Clientes</p>
-                
+
                 <div class="row mb-3 justify-content-center">
                     <div class="col-lg-6">
                         <div class="card border-info mb-3">
@@ -144,7 +144,7 @@
 
                 <div class="row justify-content-center">
 
-                <!-- <div class="row justify-content-center">
+                    <!-- <div class="row justify-content-center">
 
                     <p class="fs-6 mb-1">Cantidad de solicitudes de atención</p>
 
@@ -174,161 +174,122 @@
 
                 </div> -->
 
-            </div>
-
-        </div>
-
-    </div>
-
-    <!--Segunda fila-->
-
-    <div class="row mb-3">
-
-        <!-- Movilidades -->
-        <div class="col-lg-6 mb-3">
-
-            <div class="border rounded px-4 pt-3 pb-3">
-
-                <p class="fs-6">Dispositivos</p>
-
-                <div class="row mb-3 justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="card border-info mb-3">
-                            <div class="card-header">Cantidad</div>
-                            <a class="text-info" href="index.php?c=MovilidadController&a=index">
-                                <div class="card-body">
-                                    <!-- <h5 class="card-title fs-2"><?= $cantMovilidades ?></h5> -->
-                                    <p class="card-text">En total</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row justify-content-evenly">
-
-                    <div class="col-auto">
-
-                        <div class="card border-success mb-3">
-                            <div class="card-header">Disponible</div>
-                            <div class="card-body">
-                                <!-- <h4 class="card-title fs-2"><?= $cantMovDisponibles ?></h4> -->
-                                <p class="card-text">Unidades en total</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-auto">
-
-                        <div class="card border-danger mb-3">
-                            <div class="card-header">Ocupado</div>
-                            <div class="card-body">
-                                <!-- <h4 class="card-title fs-2"><?= $cantMovOcupadas ?></h4> -->
-                                <p class="card-text">Unidades en total</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="row justify-content-evenly">
-
-                    <div class="col-auto">
-
-                        <div class="card border-secondary mb-3">
-                            <div class="card-header">No disponible</div>
-                            <div class="card-body">
-                                <!-- <h4 class="card-title fs-2"><?= $cantMovNoDisponibles ?></h4> -->
-                                <p class="card-text">Unidades en total</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-auto">
-
-                        <div class="card border-warning mb-3">
-                            <div class="card-header">Baja</div>
-                            <div class="card-body">
-                                <!-- <h4 class="card-title fs-2"><?= $cantMovBajas ?></h4> -->
-                                <p class="card-text">Unidades en total</p>
-                            </div>
-                        </div>
-
-                    </div>
-
                 </div>
 
             </div>
 
         </div>
 
-        <!-- Usuarios -->
+        <!--Segunda fila-->
 
-        <div class="col-lg-6 mb-3">
+        <div class="row mb-3">
 
-            <div class="border rounded px-4 pt-3 pb-3">
+            <!-- Movilidades -->
+            <div class="col-lg-6 mb-3">
 
-                <p class="fs-6">Usuarios</p>
+                <div class="border rounded px-4 pt-3 pb-3">
 
-                <div class="row mb-3 justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="card border-info mb-3">
-                            <div class="card-header">Cantidad</div>
-                            <a class="text-info" href="index.php?c=UsuariosController&a=index">
+                    <p class="fs-6">Estado de Tareas</p>
+
+                    
+                    <div class="table-responsive-lg overflow-auto pt-1" style="max-height: 285px;">
+                        <table class="table table-striped table-hover" id="tablaDinamica">
+                            <thead>
+                                <tr class="text-center">
+                                    <th scope="col">Tipos de Estados</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr>
+                                    <td class="bg-secondary text-white"> En espera de una acción </td>
+                                </tr>
+                                <tr>
+                                    <td class="bg-primary text-dark"> En progreso </td>
+                                </tr>
+                                <tr>
+                                    <td class="bg-danger text-white"> Cancelados </td>
+                                </tr>
+                                <tr>
+                                    <td class="bg-success text-white"> Finalizados </td>
+                                </tr>
+                                <tr>
+                                    <td class="bg-warning text-dark"> Eliminados </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+            <!-- Usuarios -->
+
+            <div class="col-lg-6 mb-3">
+
+                <div class="border rounded px-4 pt-3 pb-3">
+
+                    <p class="fs-6">Usuarios</p>
+
+                    <div class="row mb-3 justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="card border-info mb-3">
+                                <div class="card-header">Cantidad</div>
+                                <a class="text-info" href="index.php?c=UsuariosController&a=index">
+                                    <div class="card-body">
+                                        <h5 class="card-title fs-2"><?= $cantPersonas ?></h5>
+                                        <p class="card-text">En total</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+
+                        <div class="col-lg-4">
+
+                            <div class="card border-info mb-3">
+                                <div class="card-header">Administ.</div>
                                 <div class="card-body">
-                                    <h5 class="card-title fs-2"><?= $cantPersonas ?></h5>
-                                    <p class="card-text">En total</p>
+                                    <h4 class="card-title fs-2"><?= $cantAdmins ?></h4>
+                                    <p class="card-text">Total</p>
                                 </div>
-                            </a>
+
+                            </div>
+
                         </div>
-                    </div>
-                </div>
 
-                <div class="row justify-content-center">
+                        <div class="col-lg-4">
 
-                    <div class="col-lg-4">
+                            <div class="card border-info mb-3">
+                                <div class="card-header">Encargados</div>
+                                <div class="card-body">
+                                    <h4 class="card-title fs-2"><?= $cantEncargados ?></h4>
+                                    <p class="card-text">Total</p>
+                                </div>
+                            </div>
 
-                        <div class="card border-info mb-3">
-                            <div class="card-header">Administ.</div>
-                            <div class="card-body">
-                                <h4 class="card-title fs-2"><?= $cantAdmins ?></h4>
-                                <p class="card-text">Total</p>
+                        </div>
+
+                        <div class="col-lg-4">
+
+                            <div class="card border-info mb-3">
+                                <div class="card-header">Tecnicos</div>
+                                <div class="card-body">
+                                    <h4 class="card-title fs-2"><?= $cantTecnicos ?></h4>
+                                    <p class="card-text">Total</p>
+                                </div>
                             </div>
 
                         </div>
 
                     </div>
 
-                    <div class="col-lg-4">
-
-                        <div class="card border-info mb-3">
-                            <div class="card-header">Encargados</div>
-                            <div class="card-body">
-                                <h4 class="card-title fs-2"><?= $cantEncargados ?></h4>
-                                <p class="card-text">Total</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-4">
-
-                        <div class="card border-info mb-3">
-                            <div class="card-header">Tecnicos</div>
-                            <div class="card-body">
-                                <h4 class="card-title fs-2"><?= $cantTecnicos ?></h4>
-                                <p class="card-text">Total</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- <div class="row justify-content-center">
+                    <!-- <div class="row justify-content-center">
                     <div class="col-lg-4">
                         <div class="card border-warning mb-3">
                             <div class="card-header">
@@ -342,10 +303,10 @@
                     </div>
                 </div>  -->
 
+                </div>
+
             </div>
 
         </div>
 
     </div>
-
-</div>

@@ -21,6 +21,10 @@ class EstadisticasController
 
         $cantClientes = $estModel->contarClientesM();
 
+        // Estados 
+
+        $cantEstados = $estModel->contarEstadosM();
+
         if ($_SESSION['rol'] != 1) {
             
             // $registroSalud = $estModel->contarUsuariosSalud();
