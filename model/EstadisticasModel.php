@@ -111,12 +111,14 @@ class EstadisticasModel extends Conexion
         $cantEstados = $result->fetch_row()[0];
         return $cantEstados;
     }
-    public function listarEstadosM(){
-        $sql = "SELECT * from estado_msj";
+   
+    public function listarColoresM(){
+        $sql = "SELECT color_estado, estado from estado_msj";
         $result = $this->conexion->query($sql);
-        $cantClientes = $result->fetch_row()[0];
-        return $cantClientes;
+        $colorEstado = $result->fetch_all(MYSQLI_ASSOC);
+        return $colorEstado;
     }
+    // 
 
 
 

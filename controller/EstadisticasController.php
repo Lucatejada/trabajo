@@ -24,6 +24,7 @@ class EstadisticasController
         // Estados 
 
         $cantEstados = $estModel->contarEstadosM();
+        $colorEstado = $estModel->listarColoresM();
 
         if ($_SESSION['rol'] != 1) {
             

@@ -142,166 +142,106 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-center">
 
-                    <!-- <div class="row justify-content-center">
-
-                    <p class="fs-6 mb-1">Cantidad de solicitudes de atención</p>
-
-                    <div class="table-responsive-lg overflow-auto pt-1" style="max-height: 285px;">
-                        <table class="table table-striped table-hover" id="tablaDinamica">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Distrito</th>
-                                    <th scope="col">Cantidad</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                foreach ($listMsjDistritos as $distrito) {
-                                ?>
-                                    <tr class="">
-                                        <td scope="row"><?= $distrito['nombre'] ?></td>
-                                        <td><?= $distrito['total'] ?></td>
-                                    </tr>
-                                <?php
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
-
-
-                </div> -->
-
-                </div>
 
             </div>
 
         </div>
 
-        <!--Segunda fila-->
+    </div>
 
-        <div class="row mb-3">
+    <!--Segunda fila-->
 
-            <!-- Movilidades -->
-            <div class="col-lg-6 mb-3">
+    <div class="row mb-3">
 
-                <div class="border rounded px-4 pt-3 pb-3">
+        <!-- Movilidades -->
+        <div class="col-lg-6 mb-3">
 
-                    <p class="fs-6">Estado de Tareas</p>
+            <div class="border rounded px-4 pt-3 pb-3">
 
-                    
-                    <div class="table-responsive-lg overflow-auto pt-1" style="max-height: 285px;">
-                        <table class="table table-striped table-hover" id="tablaDinamica">
-                            <thead>
-                                <tr class="text-center">
-                                    <th scope="col">Tipos de Estados</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-center">
-                                <tr>
-                                    <td class="bg-secondary text-white"> En espera de una acción </td>
-                                </tr>
-                                <tr>
-                                    <td class="bg-primary text-dark"> En progreso </td>
-                                </tr>
-                                <tr>
-                                    <td class="bg-danger text-white"> Cancelados </td>
-                                </tr>
-                                <tr>
-                                    <td class="bg-success text-white"> Finalizados </td>
-                                </tr>
-                                <tr>
-                                    <td class="bg-warning text-dark"> Eliminados </td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                    </div>
+                <p class="fs-6">Estado de Tareas</p>
+
+                <?php
+                foreach ($colorEstado as $color) {
+                ?>
+                    <div class="text-body-emphasis fw-semibold font-weight-bold justify-content-center d-flex align-items-center" style="width: auto; height: 50px; background-color: <?= $color['color_estado'] ?> "> <?= $color['estado'] ?> </div>
+                <?php
+                }
 
 
+                ?>
 
-                </div>
 
             </div>
 
-            <!-- Usuarios -->
+        </div>
 
-            <div class="col-lg-6 mb-3">
+        <!-- Usuarios -->
 
-                <div class="border rounded px-4 pt-3 pb-3">
+        <div class="col-lg-6 mb-3">
 
-                    <p class="fs-6">Usuarios</p>
+            <div class="border rounded px-4 pt-3 pb-3">
 
-                    <div class="row mb-3 justify-content-center">
-                        <div class="col-lg-6">
-                            <div class="card border-info mb-3">
-                                <div class="card-header">Cantidad</div>
-                                <a class="text-info" href="index.php?c=UsuariosController&a=index">
-                                    <div class="card-body">
-                                        <h5 class="card-title fs-2"><?= $cantPersonas ?></h5>
-                                        <p class="card-text">En total</p>
-                                    </div>
-                                </a>
-                            </div>
+                <p class="fs-6">Usuarios</p>
+
+                <div class="row mb-3 justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="card border mb-3">
+                            <div class="card-header">Cantidad</div>
+                            <a href="index.php?c=UsuariosController&a=index">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title fs-2"><?= $cantPersonas ?></h5>
+                                    <p class="card-text">En total</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
+                </div>
 
-                    <div class="row justify-content-center">
+                <div class="row justify-content-center">
 
-                        <div class="col-lg-4">
+                    <div class="col-lg-4">
 
-                            <div class="card border-info mb-3">
-                                <div class="card-header">Administ.</div>
-                                <div class="card-body">
+                        <div class="card border mb-3">
+                            <div class="card-header">Administ.</div>
+                            <a href="index.php?c=UsuariosController&a=index">
+                                <div class="card-body text-center">
                                     <h4 class="card-title fs-2"><?= $cantAdmins ?></h4>
                                     <p class="card-text">Total</p>
                                 </div>
-
-                            </div>
+                            </a>
 
                         </div>
 
-                        <div class="col-lg-4">
+                    </div>
 
-                            <div class="card border-info mb-3">
-                                <div class="card-header">Encargados</div>
-                                <div class="card-body">
+                    <div class="col-lg-4">
+
+                        <div class="card border mb-3">
+                            <div class="card-header">Encargados</div>
+                            <a href="index.php?c=UsuariosController&a=index">
+                                <div class="card-body text-center">
                                     <h4 class="card-title fs-2"><?= $cantEncargados ?></h4>
                                     <p class="card-text">Total</p>
                                 </div>
-                            </div>
-
+                            </a>
                         </div>
 
-                        <div class="col-lg-4">
+                    </div>
 
-                            <div class="card border-info mb-3">
-                                <div class="card-header">Tecnicos</div>
-                                <div class="card-body">
+                    <div class="col-lg-4">
+
+                        <div class="card border mb-3">
+                            <div class="card-header">Tecnicos</div>
+                            <a href="index.php?c=UsuariosController&a=index">
+                                <div class="card-body text-center">
                                     <h4 class="card-title fs-2"><?= $cantTecnicos ?></h4>
                                     <p class="card-text">Total</p>
                                 </div>
-                            </div>
-
+                            </a>
                         </div>
 
                     </div>
-
-                    <!-- <div class="row justify-content-center">
-                    <div class="col-lg-4">
-                        <div class="card border-warning mb-3">
-                            <div class="card-header">
-                                Bajas
-                            </div>
-                            <div class="card-body">
-                                 <h4 class="card-title"><?= $cantUsuariosBaja ?></h4> 
-                                 <p class="card-text">Total</p> 
-                            </div>
-                        </div>
-                    </div>
-                </div>  -->
 
                 </div>
 
@@ -310,3 +250,5 @@
         </div>
 
     </div>
+
+</div>
