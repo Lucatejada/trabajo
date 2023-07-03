@@ -41,9 +41,9 @@
 
                 <div class="row mb-3 justify-content-center">
                     <div class="col-auto">
-                        <div class="card border-info mb-3">
+                        <div class="card border mb-3">
                             <div class="card-header">Tareas</div>
-                            <a class="text-info" href="index.php?c=MensajesController&a=index">
+                            <a class="text-info" href="index.php?c=EstadisticasController&a=index">
                                 <div class="card-body">
                                     <!-- <h5 class="card-title fs-2"><?= $cantTotalMsj ?></h5> -->
                                     <p class="card-text">En total</p>

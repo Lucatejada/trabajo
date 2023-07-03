@@ -1,5 +1,4 @@
 <?php
-
 require('../../model/EstadisticasModel.php');
 class EstadisticasController
 {
@@ -26,8 +25,11 @@ class EstadisticasController
         $cantEstados = $estModel->contarEstadosM();
         $colorEstado = $estModel->listarColoresM();
 
+        //Ordenes
+        $listaOrdenes = $estModel->mostrarOrdenes();
+
         if ($_SESSION['rol'] != 1) {
-            
+
             // $registroSalud = $estModel->contarUsuariosSalud();
             $cantPersonas = $estModel->contarUsuariosM();
             // $cantHombres = $estModel->contarPersonasMascM();
@@ -37,8 +39,6 @@ class EstadisticasController
 
         require_once('plantilla.php');
         require_once('estadisticas/inicio.php');
+        require_once('estadisticas/orden.php');
     }
-
- 
-    
 }

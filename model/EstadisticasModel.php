@@ -118,7 +118,17 @@ class EstadisticasModel extends Conexion
         $colorEstado = $result->fetch_all(MYSQLI_ASSOC);
         return $colorEstado;
     }
-    // 
+    //
+    
+    
+    public function mostrarOrdenes()
+    {
+
+        $sql = "SELECT * FROM orden";
+        $resultado = $this->conexion->query($sql);
+        $listaOrdenes = $resultado->fetch_all(MYSQLI_ASSOC);
+        return $listaOrdenes;
+    }
 
 
 

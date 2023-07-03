@@ -52,5 +52,7 @@ class LoginModel extends Conexion
         return $user;
     }
 
+    
+
 }
 ?>
