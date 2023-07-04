@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-06-2023 a las 18:55:47
+-- Tiempo de generación: 04-07-2023 a las 18:55:58
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -117,9 +117,17 @@ INSERT INTO `estado_msj` (`id`, `estado`, `color_estado`) VALUES
 CREATE TABLE `orden` (
   `num_orden` int(11) NOT NULL,
   `descripcion` longtext DEFAULT NULL,
-  `num_siniestro` int(11) DEFAULT NULL,
-  `presupuesto` int(11) DEFAULT NULL
+  `num_siniestro` bigint(11) DEFAULT NULL,
+  `presupuesto` float DEFAULT NULL,
+  `id_estado_msj2` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Ordenes de telefono \r\n';
+
+--
+-- Volcado de datos para la tabla `orden`
+--
+
+INSERT INTO `orden` (`num_orden`, `descripcion`, `num_siniestro`, `presupuesto`, `id_estado_msj2`) VALUES
+(1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et massa dictum odio dapibus faucibus. Curabitur sodales magna nibh, a consequat sem blandit vitae. ', 1231245897, 1353.99, 2);
 
 -- --------------------------------------------------------
 
@@ -204,7 +212,8 @@ ALTER TABLE `estado_msj`
 -- Indices de la tabla `orden`
 --
 ALTER TABLE `orden`
-  ADD PRIMARY KEY (`num_orden`);
+  ADD PRIMARY KEY (`num_orden`),
+  ADD KEY `id_estado_msj2` (`id_estado_msj2`);
 
 --
 -- Indices de la tabla `rol`
@@ -241,7 +250,7 @@ ALTER TABLE `estado_msj`
 -- AUTO_INCREMENT de la tabla `orden`
 --
 ALTER TABLE `orden`
-  MODIFY `num_orden` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `num_orden` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
