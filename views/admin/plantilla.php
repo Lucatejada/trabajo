@@ -37,7 +37,7 @@ if (isset($_SESSION['dni'])) {
                 <nav class="navbar navbar-expand-lg bg-dark justify-content-flex-start">
                     <img src="../assets/logoWeb.png" alt="Logo" width="120" height="60">
                     <div class="container-fluid">
-                        <a class="navbar-brand px-2 justify-content-end" href="index.php?c=EstadisticasController&a=index">Sistema de tickets</a>
+                        <a class="navbar-brand px-2 justify-content-end" >Sistema de tickets</a>
 
 
                         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">

@@ -49,23 +49,26 @@
             });
         }, );
     </script>
-    
+
 
 </head>
 
+
 <body>
 
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid px-5 pt-3">
+        <div class="">
             <div class="col-lg-12">
-                <div class="table-responsive pt-5">
-                    <table id="table" class="table table-striped table-bordered" cellspacing="5" width="100%" border="3%">
+                <div class="table-responsive">
+                    <table id="table" class="table-striped">
                         <thead>
+
                             <tr>
-                                <th scope="col">ID Orden</th>
-                                <th scope="col">Descripcion</th>
-                                <th scope="col">Num Siniestron</th>
+                                <th class="col">N° Orden</th>
+                                <th class="col-6">Descripcion</th>
+                                <th scope="col">N° Siniestro</th>
                                 <th scope="col">Presupuesto</th>
+                                <th scope="col">Estado</th>
 
                             </tr>
                         </thead>
@@ -85,7 +88,10 @@
                                         <?= $orden["num_siniestro"] ?>
                                     </td>
                                     <td>
-                                        <?= $orden["presupuesto"] ?>
+                                        $ <?= $orden["presupuesto"] ?>
+                                    </td>
+                                    <td>
+                                        <?= $orden["estado"] ?>
                                     </td>
 
                                 </tr>
@@ -99,11 +105,15 @@
                         </tbody>
 
                     </table>
-                    <a class="btn btn-primary"> Regresar</a>
+                    <a class="btn btn-primary" href="index.php?c=EstadisticasController&a=index"> Regresar</a>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- ---------------------------------- -->
+
+
 
 
 

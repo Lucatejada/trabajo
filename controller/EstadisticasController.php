@@ -39,6 +39,5 @@ class EstadisticasController
 
         require_once('plantilla.php');
         require_once('estadisticas/inicio.php');
-        require_once('estadisticas/orden.php');
     }
 }
