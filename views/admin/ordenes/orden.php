@@ -56,6 +56,17 @@
 
 <body>
 
+    <div class="container">
+
+        <div class="text-end">
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregarOrden">Agregar Orden</a>
+        </div>
+    </div>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
     <div class="container px-5 pt-3">
         <div class="container-fluid">
             <div class="col-lg-12">
@@ -64,6 +75,7 @@
                         <thead class="table-dark">
                             <tr>
                                 <th class="col">#</th>
+                                <th class="col">Equipo</th>
                                 <th class="col-6">Descripcion</th>
                                 <th scope="col">N° Siniestro</th>
                                 <th scope="col">Presupuesto</th>
@@ -81,6 +93,9 @@
                                         <?= $orden["num_orden"] ?>
                                     </td>
                                     <td>
+                                        <?= $orden["equipo"] ?>
+                                    </td>
+                                    <td>
                                         <?= $orden["descripcion"] ?>
                                     </td>
                                     <td>
@@ -89,8 +104,8 @@
                                     <td>
                                         $<?= $orden["presupuesto"] ?>
                                     </td>
-                                    <td class="table-dark">
-                                    <div class=" justify-content-center d-flex align-items-center rounded" style="width: 100%; height: 30px; background-color: <?= $orden['color_estado'] ?> "> <?= $orden['estado'] ?> </div>
+                                    <td class="justify-content-center align-middle">
+                                        <div class="table-dark justify-content-center d-flex align-items-center align-middle rounded" style="width: 100%; height: 30px; background-color: <?= $orden['color_estado'] ?> "> <?= $orden['estado'] ?> </div>
                                     </td>
 
                                 </tr>
@@ -112,7 +127,64 @@
 
     <!-- ---------------------------------- -->
 
+    <div class="modal fade" id="modalAgregarOrden" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="index.php?c=OrdenController&a=agregarOrden" method="post">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Nueva Orden</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="userActual" value="<?= $_SESSION['nombre'] ?>">
 
+                        <div class="mb-3">
+                            <label for="" class="form-label">Equipo</label>
+                            <input type="text" class="form-control" name="equipo" aria-describedby="helpId" placeholder="Escribe aquí">
+                            <small id="txtDni" class="form-text text-danger"></small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Descripcion</label>
+                            <input type="text" class="form-control" name="descripcion" id="" aria-describedby="helpId" placeholder="Escribe aquí">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Nº Sinietro</label>
+                            <input type="text" class="form-control" name="n_siniestro" id="" aria-describedby="helpId" placeholder="Escribe aquí">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Presupuesto</label>
+                            <input type="email" class="form-control" name="presupuesto" id="" aria-describedby="helpId" placeholder="Escribe aquí">
+                        </div>
+
+                        <!-- SELECCIONAR DISTRITOS  -->
+                        <div class="mb-3">
+                            <label for="" class="form-label">Estado</label>
+                            <select aria-label="Default select example" name="distrito" required="" class="form-control">
+                                <option selected>Estado</option>
+                                <?php
+                                require_once("../../model/EstadisticasModel.php");
+                                $orden = new EstadisticasModel();
+                                $estado = $orden->estadosM();
+                                foreach ($estado as $estados) {
+                                ?>
+                                    <option value="<?= $estados['estado'] ?>"> </option>
+                                <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" id="btnAgregar" class="btn btn-primary">Agregar usuario</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 

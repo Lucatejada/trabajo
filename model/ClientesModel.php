@@ -27,7 +27,8 @@ class ClientesModel extends Conexion
     }
     public function listarClientesM()
     {
-        $sql = "SELECT nombre, telefono from clientes";
+        $sql = "SELECT nombre, telefono from clientes 
+        ORDER BY Id DESC LIMIT 0, 4";
         $result = $this->conexion->query($sql);
         $listNombres = $result->fetch_all(MYSQLI_ASSOC);
         return $listNombres;

@@ -35,9 +35,9 @@
 
         <div class="col-lg-6 mb-3">
 
-            <div class="border rounded px-4 pt-3 pb-3">
-
-                <p class="fs-6">Equipos</p>
+            <div class="border rounded px-4 pt-3 pb-3 text-center">
+                
+                <p class="fs-6 text-start">Equipos</p>
 
                 <div class="row mb-3 justify-content-center">
                     <div class="col-auto">
@@ -197,7 +197,7 @@
 
         <div class="col-lg-6 mb-3">
 
-            <div class="border rounded px-4 pt-3 pb-3">
+            <div class="border rounded px-4 pt-3 pb-3 text-center">
 
                 <p class="fs-6">Usuarios</p>
 
