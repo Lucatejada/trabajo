@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-07-2023 a las 18:55:04
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Tiempo de generación: 07-07-2023 a las 23:01:07
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,22 +28,23 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `clientes` (
+  `Id` int(100) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `direccion` longtext DEFAULT NULL,
   `dni` bigint(100) NOT NULL,
   `telefono` bigint(100) DEFAULT NULL,
   `email` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Clientes del sistema\r\n';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Clientes del sistema\r\n';
 
 --
 -- Volcado de datos para la tabla `clientes`
 --
 
-INSERT INTO `clientes` (`nombre`, `direccion`, `dni`, `telefono`, `email`) VALUES
-('Agustin Videla', 'En el medio del campo', 4321, 2617123456, 'agustinvidela@gmail.com'),
-('Franco Moreno', 'Guaymallen 123', 44000001, 2617891236, 'francom@gmail.com'),
-('Luca Tejada', 'Pedro Goyena 977', 44662123, 2617076187, 'lukatejadagmail.com'),
-('Lucas Saleme ', 'Libertad 720', 44000000, 2617894561, 'lucasaleme@gmail.com\r\n');
+INSERT INTO `clientes` (`Id`, `nombre`, `direccion`, `dni`, `telefono`, `email`) VALUES
+(1, 'Luca Tejada', 'Pedro Goyena 977', 44662123, 2617076187, 'lukatejadagmail.com'),
+(2, 'Agustin Videla', 'En el medio del campo', 4321, 2617123456, 'agustinvidela@gmail.com'),
+(3, 'Lucas Saleme ', 'Libertad 720', 44000000, 2617894561, 'lucasaleme@gmail.com\r\n'),
+(4, 'Franco Moreno', 'Guaymallen 123', 44000001, 2617891236, 'francom@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -63,7 +64,7 @@ CREATE TABLE `distritos` (
   `motivo_baja` varchar(300) DEFAULT NULL,
   `usuario_baja` varchar(65) DEFAULT NULL,
   `id_estado_distrito2` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `distritos`
@@ -102,7 +103,7 @@ CREATE TABLE `estado_msj` (
   `id` int(11) NOT NULL,
   `estado` varchar(45) DEFAULT NULL,
   `color_estado` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `estado_msj`
@@ -126,22 +127,24 @@ INSERT INTO `estado_msj` (`id`, `estado`, `color_estado`) VALUES
 
 CREATE TABLE `orden` (
   `num_orden` int(11) NOT NULL,
+  `equipo` varchar(100) NOT NULL,
   `descripcion` longtext DEFAULT NULL,
   `num_siniestro` bigint(11) DEFAULT NULL,
   `presupuesto` float DEFAULT NULL,
   `id_estado_msj2` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Ordenes de telefono \r\n';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Ordenes de telefono \r\n';
 
 --
 -- Volcado de datos para la tabla `orden`
 --
 
-INSERT INTO `orden` (`num_orden`, `descripcion`, `num_siniestro`, `presupuesto`, `id_estado_msj2`) VALUES
-(1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et massa dictum odio dapibus faucibus. Curabitur sodales magna nibh, a consequat sem blandit vitae. ', 1231245897, 1353.99, 2),
-(2, 'Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles', 458962, 8000, 3),
-(3, 'Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons, or any other element.', 123456, 13895, 1),
-(4, 'Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.', 7536951, 9962.75, 4),
-(5, 'Install Bootstrap’s source Sass and JavaScript files via npm, RubyGems, Composer, or Meteor. Package managed installs don’t include documentation or our full build scripts. You can also use any demo from our Examples repo to quickly jumpstart Bootstrap projects.', 7536, 9962.75, 5);
+INSERT INTO `orden` (`num_orden`, `equipo`, `descripcion`, `num_siniestro`, `presupuesto`, `id_estado_msj2`) VALUES
+(1, 'Samsung Galaxy S3', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et massa dictum odio dapibus faucibus. Curabitur sodales magna nibh, a consequat sem blandit vitae. ', 1231245897, 1353.99, 2),
+(2, 'Motorola G7', 'Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles', 458962, 8000, 3),
+(3, 'Iphone 8', 'Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons, or any other element.', 123456, 13895, 1),
+(4, 'Computadora Exo', 'Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.', 7536951, 9962.75, 4),
+(5, 'Control remoto', 'Install Bootstrap’s source Sass and JavaScript files via npm, RubyGems, Composer, or Meteor. Package managed installs don’t include documentation or our full build scripts. You can also use any demo from our Examples repo to quickly jumpstart Bootstrap projects.', 7536, 9962.75, 5),
+(6, 'asd', 'asd', 123, 456, 6);
 
 -- --------------------------------------------------------
 
@@ -152,7 +155,7 @@ INSERT INTO `orden` (`num_orden`, `descripcion`, `num_siniestro`, `presupuesto`,
 CREATE TABLE `rol` (
   `id` int(11) NOT NULL,
   `tipo_usuario` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `rol`
@@ -186,7 +189,7 @@ CREATE TABLE `usuario` (
   `rol_anterior` varchar(65) DEFAULT NULL,
   `ultimo_acceso` datetime DEFAULT NULL,
   `id_rol2` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -207,7 +210,7 @@ INSERT INTO `usuario` (`dni`, `nombre`, `apellido`, `correo`, `username`, `pass`
 -- Indices de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  ADD PRIMARY KEY (`nombre`);
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `distritos`
@@ -264,29 +267,13 @@ ALTER TABLE `estado_msj`
 -- AUTO_INCREMENT de la tabla `orden`
 --
 ALTER TABLE `orden`
-  MODIFY `num_orden` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `num_orden` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `distritos`
---
-ALTER TABLE `distritos`
-  ADD CONSTRAINT `fk_id_estado_distrito2` FOREIGN KEY (`id_estado_distrito2`) REFERENCES `estado_distrito` (`id`);
-
---
--- Filtros para la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD CONSTRAINT `fk_id_rol2` FOREIGN KEY (`id_rol2`) REFERENCES `rol` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
