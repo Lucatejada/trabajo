@@ -29,17 +29,17 @@
                         extend: 'pdfHtml5',
                         orientation: 'landscape',
                         pageSize: 'LEGAL',
-                        title: 'Ordenes'
+                        title: 'Clientes'
                     },
                     {
                         extend: 'excelHtml5',
                         autoFilter: true,
                         sheetName: 'Exported data',
-                        title: 'Ordenes'
+                        title: 'Clientes'
                     },
                     {
                         extend: 'print',
-                        title: 'Ordenes',
+                        title: 'Clientes',
                         orientation: 'landscape',
                     }
                 ],
@@ -57,40 +57,40 @@
 <body>
 
     <div class="container px-5 pt-3">
-        <div class="container-fluid">
+        <div class="">
             <div class="col-lg-12">
-                <div class="table-responsive-sm">
-                    <table id="table" class="table table-stripeds ">
+                <div class="table-responsive-l">
+                    <table id="table" class="table table-stripeds">
                         <thead class="table-dark">
                             <tr>
-                                <th class="col">#</th>
-                                <th class="col-6">Descripcion</th>
-                                <th scope="col">N° Siniestro</th>
-                                <th scope="col">Presupuesto</th>
-                                <th scope="col">Estado</th>
+                                <th class="col">Nombre</th>
+                                <th class="col">Direccion</th>
+                                <th class="col">DNI</th>
+                                <th class="col">Telefono</th>
+                                <th class="col">Email</th>
 
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            foreach ($listaOrdenes as $orden) {
+                            foreach ($listClientes as $clientes) {
                             ?>
                                 <tr>
 
                                     <td>
-                                        <?= $orden["num_orden"] ?>
+                                        <?= $clientes["nombre"] ?>
                                     </td>
                                     <td>
-                                        <?= $orden["descripcion"] ?>
+                                        <?= $clientes["direccion"] ?>
                                     </td>
                                     <td>
-                                        #<?= $orden["num_siniestro"] ?>
+                                        <?= $clientes["dni"] ?>
                                     </td>
                                     <td>
-                                        $<?= $orden["presupuesto"] ?>
+                                        <?= $clientes["telefono"] ?>
                                     </td>
-                                    <td class="table-dark">
-                                    <div class=" justify-content-center d-flex align-items-center rounded" style="width: 100%; height: 30px; background-color: <?= $orden['color_estado'] ?> "> <?= $orden['estado'] ?> </div>
+                                    <td>
+                                        <?= $clientes["email"] ?>
                                     </td>
 
                                 </tr>

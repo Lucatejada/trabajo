@@ -9,18 +9,11 @@ class EstadisticasModel extends Conexion
         parent::__construct();
     }
 
-    public function mostrarRespuestas()
-    {
-        $sql = "SELECT nombre, apellido, cuil, telefono, sangre, peso, talle, uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez, once, doce, trece, catorce, quince, nombre_tutor, telEmergencia, archivo FROM resultado";
-        $resultado = $this->conexion->query($sql);
-        $listaRespuestas = $resultado->fetch_all(MYSQLI_ASSOC);
-        return $listaRespuestas;
-    }
 
     //INICIO
     public function contarTotalEstadosM()
     {
-        $sql = "SELECT COUNT(*) FROM estado_msj;";
+        $sql = "SELECT COUNT(*) FROM orden;";
         $result = $this->conexion->query($sql);
         $cantMsj = $result->fetch_row()[0];
         return $cantMsj;
@@ -36,16 +29,6 @@ class EstadisticasModel extends Conexion
         return $cantMsjxEstado;
     }
 
-    public function contarTotalDistritosM()
-    {
-        $sql = "SELECT COUNT(*) 
-                FROM distritos";
-        $result = $this->conexion->query($sql);
-        $cantDistritos = $result->fetch_row()[0];
-        return $cantDistritos;
-    }
-
- 
 
     //MOVILIDADES
     public function contarTotalMovilidadesM()
@@ -89,38 +72,42 @@ class EstadisticasModel extends Conexion
         return $cantEncargados;
     }
 
-    public function contarTecnicosM(){
+    public function contarTecnicosM()
+    {
         $sql = "SELECT count(*) from usuario ";
         $result = $this->conexion->query($sql);
         $cantTecnicos = $result->fetch_row()[0];
         return $cantTecnicos;
     }
-   
-    public function contarClientesM(){
-        $sql = "SELECT count(*) from distritos";
+
+    public function contarClientesM()
+    {
+        $sql = "SELECT count(*) from clientes";
         $result = $this->conexion->query($sql);
         $cantClientes = $result->fetch_row()[0];
         return $cantClientes;
     }
-   
+
 
     //Estados
-    public function contarEstadosM(){
+    public function contarEstadosM()
+    {
         $sql = "SELECT count(*) from estado_msj";
         $result = $this->conexion->query($sql);
         $cantEstados = $result->fetch_row()[0];
         return $cantEstados;
     }
-   
-    public function listarColoresM(){
+
+    public function listarColoresM()
+    {
         $sql = "SELECT color_estado, estado from estado_msj";
         $result = $this->conexion->query($sql);
         $colorEstado = $result->fetch_all(MYSQLI_ASSOC);
         return $colorEstado;
     }
-    //
-    
-    
+
+
+    //Muestra Ordenens 
     public function mostrarOrdenes()
     {
 
@@ -130,41 +117,25 @@ class EstadisticasModel extends Conexion
         return $listaOrdenes;
     }
 
+    //Cuenta el total de ordenes
+    public function contOrdenes()
+    {
+        $sql = "SELECT count(*) FROM orden";
+        $resultado = $this->conexion->query($sql);
+        $contOrdenes = $resultado->fetch_row()[0];
+        return $contOrdenes;
+    }
+
+    // Muentra los clientes 
+    public function listarClientesM()
+    {
+        $sql = "SELECT * from clientes";
+        $result = $this->conexion->query($sql);
+        $listNombres = $result->fetch_all(MYSQLI_ASSOC);
+        return $listNombres;
+    }
 
 
-
-
-    // public function contarPersonasMascM()
-    // {
-    //     $sql = "SELECT count(*) from personas WHERE id_genero2 = 1";
-    //     $result = $this->conexion->query($sql);
-    //     $cantHombres = $result->fetch_row()[0];
-    //     return $cantHombres;
-    // }
-
-    // public function contarPersonasFemM()
-    // {
-    //     $sql = "SELECT count(*) from personas WHERE id_genero2 = 2;";
-    //     $result = $this->conexion->query($sql);
-    //     $cantMujeres = $result->fetch_row()[0];
-    //     return $cantMujeres;
-    // }
-
-    // public function contarPersonasNbM()
-    // {
-    //     $sql = "SELECT count(*) from personas WHERE id_genero2 = 3;";
-    //     $result = $this->conexion->query($sql);
-    //     $cantNb = $result->fetch_row()[0];
-    //     return $cantNb;
-    // }
-
-    // public function contarUsuariosSalud()
-    // {
-    //     $sql = "SELECT count(*) from resultado";
-    //     $result = $this->conexion1->query($sql);
-    //     $registroSalud = $result->fetch_row()[0];
-    //     return $registroSalud;
-    // }
 
     public function contarUsuariosBajaM()
     {
@@ -172,6 +143,44 @@ class EstadisticasModel extends Conexion
         $result = $this->conexion->query($sql);
         $cantUsuariosBaja = $result->fetch_row()[0];
         return $cantUsuariosBaja;
+    }
+
+    //
+
+    public function getPendientes()
+    {
+        $sql = "SELECT count(*) from orden WHERE id_estado_msj2 = 1";
+        $result = $this->conexion->query($sql);
+        $cantPendientes = $result->fetch_row()[0];
+        return $cantPendientes;
+    }
+    public function getEnCurso()
+    {
+        $sql = "SELECT count(*) from orden WHERE id_estado_msj2 = 2";
+        $result = $this->conexion->query($sql);
+        $cantEnCurso = $result->fetch_row()[0];
+        return $cantEnCurso;
+    }
+    public function getConcluidos()
+    {
+        $sql = "SELECT count(*) from orden WHERE id_estado_msj2 = 3";
+        $result = $this->conexion->query($sql);
+        $cantConcluidos = $result->fetch_row()[0];
+        return $cantConcluidos;
+    }
+    public function getCancelados()
+    {
+        $sql = "SELECT count(*) from orden WHERE id_estado_msj2 = 4";
+        $result = $this->conexion->query($sql);
+        $cantConcluidos = $result->fetch_row()[0];
+        return $cantConcluidos;
+    }
+    public function getEliminados()
+    {
+        $sql = "SELECT count(*) from orden WHERE id_estado_msj2 = 5";
+        $result = $this->conexion->query($sql);
+        $cantConcluidos = $result->fetch_row()[0];
+        return $cantConcluidos;
     }
 
 
@@ -227,4 +236,3 @@ class EstadisticasModel extends Conexion
         return $cantMsjEstado;
     }
 }
-

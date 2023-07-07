@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-07-2023 a las 18:55:58
+-- Tiempo de generación: 07-07-2023 a las 18:55:04
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -28,12 +28,22 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `clientes` (
-  `nombre` varchar(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
   `direccion` longtext DEFAULT NULL,
-  `dni` int(11) NOT NULL,
-  `telefono` int(11) DEFAULT NULL,
+  `dni` bigint(100) NOT NULL,
+  `telefono` bigint(100) DEFAULT NULL,
   `email` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Clientes del sistema\r\n';
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`nombre`, `direccion`, `dni`, `telefono`, `email`) VALUES
+('Agustin Videla', 'En el medio del campo', 4321, 2617123456, 'agustinvidela@gmail.com'),
+('Franco Moreno', 'Guaymallen 123', 44000001, 2617891236, 'francom@gmail.com'),
+('Luca Tejada', 'Pedro Goyena 977', 44662123, 2617076187, 'lukatejadagmail.com'),
+('Lucas Saleme ', 'Libertad 720', 44000000, 2617894561, 'lucasaleme@gmail.com\r\n');
 
 -- --------------------------------------------------------
 
@@ -127,7 +137,11 @@ CREATE TABLE `orden` (
 --
 
 INSERT INTO `orden` (`num_orden`, `descripcion`, `num_siniestro`, `presupuesto`, `id_estado_msj2`) VALUES
-(1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et massa dictum odio dapibus faucibus. Curabitur sodales magna nibh, a consequat sem blandit vitae. ', 1231245897, 1353.99, 2);
+(1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et massa dictum odio dapibus faucibus. Curabitur sodales magna nibh, a consequat sem blandit vitae. ', 1231245897, 1353.99, 2),
+(2, 'Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles', 458962, 8000, 3),
+(3, 'Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons, or any other element.', 123456, 13895, 1),
+(4, 'Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.', 7536951, 9962.75, 4),
+(5, 'Install Bootstrap’s source Sass and JavaScript files via npm, RubyGems, Composer, or Meteor. Package managed installs don’t include documentation or our full build scripts. You can also use any demo from our Examples repo to quickly jumpstart Bootstrap projects.', 7536, 9962.75, 5);
 
 -- --------------------------------------------------------
 
@@ -250,7 +264,7 @@ ALTER TABLE `estado_msj`
 -- AUTO_INCREMENT de la tabla `orden`
 --
 ALTER TABLE `orden`
-  MODIFY `num_orden` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `num_orden` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`

@@ -32,16 +32,15 @@ if (isset($_SESSION['dni'])) {
 
         <body data-bs-theme="dark">
 
-            <div class="container-fluid sticky-top pb-4">
+            <div class="container sticky-top pb-4">
 
-                <nav class="navbar navbar-expand-lg bg-dark justify-content-flex-start">
-                    <img src="../assets/logoWeb.png" alt="Logo" width="120" height="60">
-                    <div class="container-fluid">
-                        <a class="navbar-brand px-2 justify-content-end" >Sistema de tickets</a>
-
-
+                <nav class="navbar navbar-expand-lg bg-dark">
+                    <div class="container">
+                        <img src="../assets/logoWeb.png" class="mx-5" alt="Logo" width="120" height="60">
+                        
+                       
                         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-
+                            
                             <ul class="navbar-nav">
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -105,9 +104,8 @@ if (isset($_SESSION['dni'])) {
                     </div>
                 </div>
             </div>
+
             <!-- MODAL AGREGAR USUARIO -->
-
-
             <div class="modal fade" id="modalAgregarUsuario" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
