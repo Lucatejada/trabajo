@@ -59,10 +59,9 @@
     <div class="container-fluid px-5 pt-3">
         <div class="">
             <div class="col-lg-12">
-                <div class="table-responsive">
-                    <table id="table" class="table-striped">
-                        <thead>
-
+                <div class="table-responsive-sm">
+                    <table id="table" class="table table-stripeds">
+                        <thead class="table-dark">
                             <tr>
                                 <th class="col">N° Orden</th>
                                 <th class="col-6">Descripcion</th>
@@ -90,7 +89,7 @@
                                     <td>
                                         $ <?= $orden["presupuesto"] ?>
                                     </td>
-                                    <td>
+                                    <td class="table-dark">
                                         <?= $orden["estado"] ?>
                                     </td>
 
